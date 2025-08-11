@@ -60,11 +60,11 @@ The following table summarizes the characteristics of each sequence in our datas
 
 [TODO]
 
-[RINEX Observation(Raw Measurements) File](RINEX/cardiff1.obs)
-[RINEX Navigation(Ephemeris) File](RINEX/cardiff.nav)
+-[RINEX Observation(Raw Measurements) File](RINEX/cardiff1.obs)
+-[RINEX Navigation(Ephemeris) File](RINEX/cardiff.nav)
 
 <p align="center">
-  <img width="720pix" src="GIF&Image/cardiff1_trajectory.pdf">
+  <img width="720pix" src="GIF&Image/cardiff_1.png">
 </p>
 <p align="center">
   <img width="638pix" src="GIF&Image/cardiff1.gif">
@@ -74,10 +74,10 @@ The following table summarizes the characteristics of each sequence in our datas
 
 [TODO]
 
-[RINEX Observation(Raw Measurements) File](RINEX/cardiff2.obs)
-[RINEX Navigation(Ephemeris) File](RINEX/cardiff.nav)
+-[RINEX Observation(Raw Measurements) File](RINEX/cardiff2.obs)
+-[RINEX Navigation(Ephemeris) File](RINEX/cardiff.nav)
 <p align="center">
-  <img width="720pix" src="GIF&Image/cardiff2_trajectory.pdf">
+  <img width="720pix" src="GIF&Image/cardiff_2.png">
 </p>
 <p align="center">
   <img width="638pix" src="GIF&Image/cardiff2.gif">
@@ -87,10 +87,10 @@ The following table summarizes the characteristics of each sequence in our datas
 
 [TODO]
 
-[RINEX Observation(Raw Measurements) File](RINEX/cardiff3.obs)
-[RINEX Navigation(Ephemeris) File](RINEX/cardiff.nav)
+-[RINEX Observation(Raw Measurements) File](RINEX/cardiff3.obs)
+-[RINEX Navigation(Ephemeris) File](RINEX/cardiff.nav)
 <p align="center">
-  <img width="720pix" src="GIF&Image/cardiff3_trajectory.pdf">
+  <img width="720pix" src="GIF&Image/cardiff_3.png">
 </p>
 <p align="center">
   <img width="638pix" src="GIF&Image/cardiff3.gif">
@@ -100,10 +100,10 @@ The following table summarizes the characteristics of each sequence in our datas
 
 [TODO]
 
-[RINEX Observation(Raw Measurements) File](RINEX/cardiff4.obs)
-[RINEX Navigation(Ephemeris) File](RINEX/cardiff.nav)
+-[RINEX Observation(Raw Measurements) File](RINEX/cardiff4.obs)
+-[RINEX Navigation(Ephemeris) File](RINEX/cardiff.nav)
 <p align="center">
-  <img width="720pix" src="GIF&Image/cardiff4_trajectory.pdf">
+  <img width="720pix" src="GIF&Image/cardiff_4.png">
 </p>
 <p align="center">
   <img width="638pix" src="GIF&Image/cardiff4.gif">
@@ -113,11 +113,70 @@ The following table summarizes the characteristics of each sequence in our datas
 
 [TODO]
 
-[RINEX Observation(Raw Measurements) File](RINEX/cardiff5.obs)
-[RINEX Navigation(Ephemeris) File](RINEX/cardiff.nav)
+-[RINEX Observation(Raw Measurements) File](RINEX/cardiff5.obs)
+-[RINEX Navigation(Ephemeris) File](RINEX/cardiff.nav)
 <p align="center">
-  <img width="720pix" src="GIF&Image/cardiff5_trajectory.pdf">
+  <img width="720pix" src="GIF&Image/cardiff_5.png">
 </p>
 <p align="center">
   <img width="638pix" src="GIF&Image/cardiff5.gif">
 </p>
+
+## How to Use (SLAM Configuration)
+
+### Visual Inertial Odometry
+
+#### [VINS-Mono](config/VINS/Mono)
+
+1.  Copy `cardiff_mono_pinhole.yaml` and `cardiff_mono_imu_config.yaml` to the `config/euroc` folder within your [VINS-Fusion](https://github.com/HKUST-Aerial-Robotics/VINS-Fusion) project directory.
+2.  Launch the nodes in separate terminals:
+
+    ```bash
+    roslaunch vins vins_rviz.launch
+    ```
+
+    ```bash
+    rosrun vins vins_node src/VINS-Fusion/config/euroc/cardiff_mono_imu_config.yaml
+    ```
+
+3.  Play the rosbag file:
+
+    ```bash
+    rosbag play Cardiffxxx.bag
+    ```
+
+#### [VINS-Fusion](config/VINS/Stereo)
+
+1.  Similarly, copy `cardiff_stereo0_pinhole.yaml`, `cardiff_stereo1_pinhole.yaml`, and `cardiff_stereo_imu_config.yaml` to the `config/euroc` folder within your [VINS-Fusion](https://github.com/HKUST-Aerial-Robotics/VINS-Fusion) project directory.
+2.  Launch the nodes in separate terminals:
+
+    ```bash
+    roslaunch vins vins_rviz.launch
+    ```
+
+    ```bash
+    rosrun vins vins_node src/VINS-Fusion/config/euroc/cardiff_stereo_imu_config.yaml
+    ```
+
+3.  Play the rosbag file:
+
+    ```bash
+    rosbag play Cardiffxxx.bag
+    ```
+
+### LiDAR Inertial Odometry
+
+#### [LIO-SAM](config/LIO)
+
+1.  Copy `run_cardiff.launch` to the `launch` folder and `cardiff.yaml` to the `config` folder within your [LIO-SAM](https://github.com/TixiaoShan/LIO-SAM) project directory.
+2.  Run the launch file:
+
+    ```bash
+    roslaunch lio_sam run_cardiff.launch
+    ```
+
+3.  Play the rosbag file in another terminal:
+
+    ```bash
+    rosbag play Cardiffxxx.bag
+    ```
