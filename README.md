@@ -14,34 +14,35 @@
 
 | Sensor                  | Specifications                                                                 |
 | :---------------------- | :----------------------------------------------------------------------------- |
-| **128-line 3D LiDAR**   | (Ouster OS0-128): Horizontal: 360°, Vertical: 90° (+45° to -45°), Resolution: 1024*10Hz |
-| **RGB/Stereo Camera**   | (Realsense D435i): RGB: 1280*720, Stereo: 848*480, 30Hz                        |
-| **Event Camera**        | (Inivation Davis 346): 346*260                                                 |
-| **IMU**                 | (Microstrain 3DM-GX5-AHRS): 9-axis (accelerometer/gyroscope/magnetometer), 500Hz |
-| **GNSS receivers**      | (u-blox EVK-F9P): L1/L2 GPS/GLONASS/Galileo/BeiDou, 1Hz                         |
-| **GNSS-RTK/INS**        | (NovAtel SPAN-CPT7): Ground truth, RMSE: 5cm, 1Hz                               |
+| **128-line 3D LiDAR**   | Ouster OS0-128: Horizontal: 360°, Vertical: 90° (+45° to -45°), Resolution: 1024*10Hz |
+| **RGB/Stereo Camera**   | Realsense D435i: RGB: 1280*720, Stereo: 848*480, 30Hz                        |
+| **Event Camera**        | Inivation Davis 346: 346*260                                                 |
+| **IMU**                 | Microstrain 3DM-GX5-AHRS: 9-axis (accelerometer/gyroscope/magnetometer), 500Hz |
+| **GNSS receivers**      | u-blox EVK-F9P: L1/L2 GPS/GLONASS/Galileo/BeiDou, 1Hz                         |
+| **GNSS-RTK/INS**        | NovAtel SPAN-CPT7: Ground truth, RMSE: 5cm, 1Hz                               |
 
 ### Extrinsic and Intrinsic Parameters
-
-
+[Sensor Extrinsic](Sensor_Parameters/sensors_extrinsic.txt)
+[IMU parameters](Sensor_Parameters/gx5_imu_param.yaml)
+[Camera Intrinsics](Sensor_Parameters/camera_Intrinsics.yaml)
 
 ### General Topics & its Message Type
 
-| Topic                                    | Message Type                         | ROS Topic                                                                 |
+| Topic                                    | ROS Topic                          | Message Type                                                                |
 | :--------------------------------------- | :----------------------------------- | :------------------------------------------------------------------------ |
-| **3D LiDAR point clouds**                | `sensor_msgs/PointCloud2`            | `/ouster/points`                                                          |
-| **Stereo Camera Images**                 | `sensor_msgs/Image`                  | `/camera/infra1/image_rect_raw` (left), `/camera/infra2/image_rect_raw` (right) |
-| **RGB Camera Images**                    | `sensor_msgs/Image`                  | `/camera/color/image_raw`                                                 |
-| **Event Camera Events**                  | `dvs_msgs/EventArray`                | `/dvs/events`                                                             |
-| **9-axis IMU**                           | `sensor_msgs/Imu`                    | `/imu/data`                                                               |
+| **3D LiDAR point clouds**                | `/ouster/points`            | `sensor_msgs/PointCloud2`                                                         |
+| **Stereo Camera Images**                 | `/camera/infra1/image_rect_raw` (left), `/camera/infra2/image_rect_raw` (right)                  | `sensor_msgs/Image`|
+| **RGB Camera Images**                    | `/camera/color/image_raw`                  | `sensor_msgs/Image`                                                |
+| **Event Camera Events**                  | `/dvs/events`                | `dvs_msgs/EventArray`                                                            |
+| **9-axis IMU**                           | `/imu/data`                    | `sensor_msgs/Imu`                                                              |
 | **GNSS Receiver**                        |                                      |                                                                           |
-| &nbsp;&nbsp;&nbsp;GNSS raw measurement      | `gnss_comm/GnssMeasMsg`              | `/ublox_driver/range_meas`                                                |
-| &nbsp;&nbsp;&nbsp;GPS/Galileo/Beidou Ephem  | `gnss_comm/GnssEphemMsg`             | `/ublox_driver/ephem`                                                     |
-| &nbsp;&nbsp;&nbsp;GLONASS Ephem             | `gnss_comm/GnssGloEphemMsg`          | `/ublox_driver/glo_ephem`                                                 |
-| &nbsp;&nbsp;&nbsp;GNSS broadcast ionospheric parameters | `gnss_comm/StampedFloat64Array`    | `/ublox_driver/iono_params`                                               |
-| &nbsp;&nbsp;&nbsp;GNSS timing message     | `gnss_comm/GnssTimePulseInfoMsg`     | `/ublox_driver/time_pulse_info`                                           |
-| &nbsp;&nbsp;&nbsp;u-Blox solution         | `sensor_msgs/NavSatFix`              | `/ublox_driver/receiver_lla`                                              |
-| **Ground Truth**                         | `novatel_oem7_msgs/INSPVAX`          | `/novatel/oem7/inspvax`                                                   |
+| &nbsp;&nbsp;&nbsp;GNSS raw measurement      | `/ublox_driver/range_meas`              | `gnss_comm/GnssMeasMsg`                                               |
+| &nbsp;&nbsp;&nbsp;GPS/Galileo/Beidou Ephem  | `/ublox_driver/ephem`             | `gnss_comm/GnssEphemMsg`                                                   |
+| &nbsp;&nbsp;&nbsp;GLONASS Ephem             | `/ublox_driver/glo_ephem`          | `gnss_comm/GnssGloEphemMsg`                                                |
+| &nbsp;&nbsp;&nbsp;GNSS broadcast ionospheric parameters | `/ublox_driver/iono_params`    | `gnss_comm/StampedFloat64Array`                                              |
+| &nbsp;&nbsp;&nbsp;GNSS timing message     | `/ublox_driver/time_pulse_info`     | `gnss_comm/GnssTimePulseInfoMsg`                                          |
+| &nbsp;&nbsp;&nbsp;u-Blox solution         | `/ublox_driver/receiver_lla`              | `sensor_msgs/NavSatFix`                                             |
+| **Ground Truth**                         | `/novatel/oem7/inspvax`          | `novatel_oem7_msgs/INSPVAX`                                                  |
 
 ## DataSets
 
@@ -59,28 +60,64 @@ The following table summarizes the characteristics of each sequence in our datas
 
 [TODO]
 
-![Cardiff-Seq1](cardiff1.gif)
+[RINEX Observation(Raw Measurements) File](RINEX/cardiff1.obs)
+[RINEX Navigation(Ephemeris) File](RINEX/cardiff.nav)
+
+<p align="center">
+  <img width="720pix" src="GIF&Image/cardiff1_trajectory.pdf">
+</p>
+<p align="center">
+  <img width="638pix" src="GIF&Image/cardiff1.gif">
+</p>
 
 ### Cardiff-Seq2
 
 [TODO]
 
-![Cardiff-Seq2](cardiff2.gif)
+[RINEX Observation(Raw Measurements) File](RINEX/cardiff2.obs)
+[RINEX Navigation(Ephemeris) File](RINEX/cardiff.nav)
+<p align="center">
+  <img width="720pix" src="GIF&Image/cardiff2_trajectory.pdf">
+</p>
+<p align="center">
+  <img width="638pix" src="GIF&Image/cardiff2.gif">
+</p>
 
 ### Cardiff-Seq3
 
 [TODO]
 
-![Cardiff-Seq3](cardiff3.gif)
+[RINEX Observation(Raw Measurements) File](RINEX/cardiff3.obs)
+[RINEX Navigation(Ephemeris) File](RINEX/cardiff.nav)
+<p align="center">
+  <img width="720pix" src="GIF&Image/cardiff3_trajectory.pdf">
+</p>
+<p align="center">
+  <img width="638pix" src="GIF&Image/cardiff3.gif">
+</p>
 
 ### Cardiff-Seq4
 
 [TODO]
 
-![Cardiff-Seq4](cardiff4.gif)
+[RINEX Observation(Raw Measurements) File](RINEX/cardiff4.obs)
+[RINEX Navigation(Ephemeris) File](RINEX/cardiff.nav)
+<p align="center">
+  <img width="720pix" src="GIF&Image/cardiff4_trajectory.pdf">
+</p>
+<p align="center">
+  <img width="638pix" src="GIF&Image/cardiff4.gif">
+</p>
 
 ### Cardiff-Seq5
 
 [TODO]
 
-![Cardiff-Seq5](cardiff5.gif)
+[RINEX Observation(Raw Measurements) File](RINEX/cardiff5.obs)
+[RINEX Navigation(Ephemeris) File](RINEX/cardiff.nav)
+<p align="center">
+  <img width="720pix" src="GIF&Image/cardiff5_trajectory.pdf">
+</p>
+<p align="center">
+  <img width="638pix" src="GIF&Image/cardiff5.gif">
+</p>
