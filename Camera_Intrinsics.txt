@@ -1,0 +1,62 @@
+Camera Intrinsics:
+Realsense D435i RGB:
+model_type: PINHOLE
+image_width: 1280
+image_height: 720
+distortion_parameters:
+   k1: 0
+   k2: 0
+   p1: 0
+   p2: 0
+projection_parameters:
+   fx: 919.75
+   fy: 919.6723022460938
+   cx: 649.6553955078125
+   cy: 351.1787414550781
+
+Realsense D435i Left:
+model_type: PINHOLE
+image_width: 848
+image_height: 480
+distortion_parameters:
+   k1: 0
+   k2: 0
+   p1: 0
+   p2: 0
+projection_parameters:
+   fx: 425.359375
+   fy: 425.359375
+   cx: 422.1190490722656
+   cy: 237.02349853515625
+
+Realsense D435i Right:
+model_type: PINHOLE
+image_width: 848
+image_height: 480
+distortion_parameters:
+   k1: 0
+   k2: 0
+   p1: 0
+   p2: 0
+projection_parameters:
+   fx: 425.359375
+   fy: 425.359375
+   cx: 422.1190490722656
+   cy: 237.02349853515625
+   
+Davis 346:
+model_type: PINHOLE
+image_width: 346
+image_height: 260
+
+distortion_parameters:
+   k1: -0.3574928530938235
+   k2: 0.14981896294720967
+   p1: 0.00047690063783391144
+   p2: -0.00048159768635637343
+projection_parameters:
+   fx: 326.097519234493
+   fy: 325.89813808922673
+   cx: 183.13401293877737
+   cy: 123.84446644095965
+

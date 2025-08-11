@@ -1,0 +1,34 @@
+LiDAR-centric Framework Extrinsic:
+
+SPAN-CPT7(Ground Truth) To Ouster(LiDAR):
+[ 0  1  0  0
+ -1  0  0 -0.08745
+  0  0  1 -0.1242 ]
+  
+Microstrain 3dm-gx5-AHRS(IMU) To Ouster(LiDAR):
+[-1  0  0  0.0654
+  0  1  0 -0.0987
+  0  0 -1 -0.0885 ]
+  
+Realsense D435i RGB(Camera) To Ouster(LiDAR):
+[ 0  0  1  0.115
+ -1  0  0  0.0325
+  0 -1  0 -0.035 ]
+
+Realsense D435i Left(Camera) To Ouster(LiDAR):
+[ 0  0  1  0.115
+ -1  0  0  0.0175
+  0 -1  0 -0.035 ]
+
+Realsense D435i Right(Camera) To Ouster(LiDAR):
+[ 0  0  1  0.115
+ -1  0  0 -0.0325
+  0 -1  0 -0.035 ]
+
+Davis 346(Event Camera) To Ouster(LiDAR):
+[ 0  0  1  0.0755
+ -1  0  0  0
+  0 -1  0 -0.073 ]
+
+
+
