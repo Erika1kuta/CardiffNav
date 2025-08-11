@@ -22,9 +22,9 @@
 | **GNSS-RTK/INS**        | NovAtel SPAN-CPT7: Ground truth, RMSE: 5cm, 1Hz                               |
 
 ### Extrinsic and Intrinsic Parameters
-[Sensor Extrinsic](Sensor_Parameters/sensors_extrinsic.txt)
-[IMU parameters](Sensor_Parameters/gx5_imu_param.yaml)
-[Camera Intrinsics](Sensor_Parameters/camera_Intrinsics.yaml)
+- [Sensor Extrinsic](Sensor_Parameters/sensors_extrinsic.txt)
+- [IMU parameters](Sensor_Parameters/gx5_imu_param.yaml)
+- [Camera Intrinsics](Sensor_Parameters/camera_Intrinsics.yaml)
 
 ### General Topics & its Message Type
 
@@ -60,73 +60,73 @@ The following table summarizes the characteristics of each sequence in our datas
 
 [TODO]
 
--[RINEX Observation(Raw Measurements) File](RINEX/cardiff1.obs)
--[RINEX Navigation(Ephemeris) File](RINEX/cardiff.nav)
+- [RINEX Observation(Raw Measurements) File](RINEX/cardiff1.obs)
+- [RINEX Navigation(Ephemeris) File](RINEX/cardiff.nav)
 
 <p align="center">
-  <img width="720pix" src="GIF&Image/cardiff_1.png">
+  <img width="480" src="GIF&Image/cardiff_1.png">
 </p>
 <p align="center">
-  <img width="638pix" src="GIF&Image/cardiff1.gif">
+  <img width="480" src="GIF&Image/cardiff1.gif">
 </p>
 
 ### Cardiff-Seq2
 
 [TODO]
 
--[RINEX Observation(Raw Measurements) File](RINEX/cardiff2.obs)
--[RINEX Navigation(Ephemeris) File](RINEX/cardiff.nav)
+- [RINEX Observation(Raw Measurements) File](RINEX/cardiff2.obs)
+- [RINEX Navigation(Ephemeris) File](RINEX/cardiff.nav)
 <p align="center">
-  <img width="720pix" src="GIF&Image/cardiff_2.png">
+  <img width="480" src="GIF&Image/cardiff_2.png">
 </p>
 <p align="center">
-  <img width="638pix" src="GIF&Image/cardiff2.gif">
+  <img width="480" src="GIF&Image/cardiff2.gif">
 </p>
 
 ### Cardiff-Seq3
 
 [TODO]
 
--[RINEX Observation(Raw Measurements) File](RINEX/cardiff3.obs)
--[RINEX Navigation(Ephemeris) File](RINEX/cardiff.nav)
+- [RINEX Observation(Raw Measurements) File](RINEX/cardiff3.obs)
+- [RINEX Navigation(Ephemeris) File](RINEX/cardiff.nav)
 <p align="center">
-  <img width="720pix" src="GIF&Image/cardiff_3.png">
+  <img width="480" src="GIF&Image/cardiff_3.png">
 </p>
 <p align="center">
-  <img width="638pix" src="GIF&Image/cardiff3.gif">
+  <img width="480" src="GIF&Image/cardiff3.gif">
 </p>
 
 ### Cardiff-Seq4
 
 [TODO]
 
--[RINEX Observation(Raw Measurements) File](RINEX/cardiff4.obs)
--[RINEX Navigation(Ephemeris) File](RINEX/cardiff.nav)
+- [RINEX Observation(Raw Measurements) File](RINEX/cardiff4.obs)
+- [RINEX Navigation(Ephemeris) File](RINEX/cardiff.nav)
 <p align="center">
-  <img width="720pix" src="GIF&Image/cardiff_4.png">
+  <img width="480" src="GIF&Image/cardiff_4.png">
 </p>
 <p align="center">
-  <img width="638pix" src="GIF&Image/cardiff4.gif">
+  <img width="480" src="GIF&Image/cardiff4.gif">
 </p>
 
 ### Cardiff-Seq5
 
 [TODO]
 
--[RINEX Observation(Raw Measurements) File](RINEX/cardiff5.obs)
--[RINEX Navigation(Ephemeris) File](RINEX/cardiff.nav)
+- [RINEX Observation(Raw Measurements) File](RINEX/cardiff5.obs)
+- [RINEX Navigation(Ephemeris) File](RINEX/cardiff.nav)
 <p align="center">
-  <img width="720pix" src="GIF&Image/cardiff_5.png">
+  <img width="480" src="GIF&Image/cardiff_5.png">
 </p>
 <p align="center">
-  <img width="638pix" src="GIF&Image/cardiff5.gif">
+  <img width="480" src="GIF&Image/cardiff5.gif">
 </p>
 
 ## How to Use (SLAM Configuration)
 
 ### Visual Inertial Odometry
 
-#### [VINS-Mono](config/VINS/Mono)
+#### [VINS-Mono](config/VINS/Mono) Configuration
 
 1.  Copy `cardiff_mono_pinhole.yaml` and `cardiff_mono_imu_config.yaml` to the `config/euroc` folder within your [VINS-Fusion](https://github.com/HKUST-Aerial-Robotics/VINS-Fusion) project directory.
 2.  Launch the nodes in separate terminals:
@@ -145,7 +145,7 @@ The following table summarizes the characteristics of each sequence in our datas
     rosbag play Cardiffxxx.bag
     ```
 
-#### [VINS-Fusion](config/VINS/Stereo)
+#### [VINS-Fusion](config/VINS/Stereo) Configuration
 
 1.  Similarly, copy `cardiff_stereo0_pinhole.yaml`, `cardiff_stereo1_pinhole.yaml`, and `cardiff_stereo_imu_config.yaml` to the `config/euroc` folder within your [VINS-Fusion](https://github.com/HKUST-Aerial-Robotics/VINS-Fusion) project directory.
 2.  Launch the nodes in separate terminals:
@@ -166,7 +166,7 @@ The following table summarizes the characteristics of each sequence in our datas
 
 ### LiDAR Inertial Odometry
 
-#### [LIO-SAM](config/LIO)
+#### [LIO-SAM](config/LIO) Configuration
 
 1.  Copy `run_cardiff.launch` to the `launch` folder and `cardiff.yaml` to the `config` folder within your [LIO-SAM](https://github.com/TixiaoShan/LIO-SAM) project directory.
 2.  Run the launch file:
