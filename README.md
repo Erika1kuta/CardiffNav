@@ -62,12 +62,13 @@ The following table summarizes the characteristics of each sequence in our datas
 
 - [RINEX Observation(Raw Measurements) File](RINEX/cardiff1.obs)
 - [RINEX Navigation(Ephemeris) File](RINEX/cardiff.nav)
+- [Ground Truth(SPAN-CPT7)](GroundTruth/cardiff1_ecef.tum) (ECEF)
 
 <p align="center">
-  <img width="480" src="GIF&Image/cardiff_1.png">
+  <img width="720" src="GIF&Image/cardiff_1.png">
 </p>
 <p align="center">
-  <img width="480" src="GIF&Image/cardiff1.gif">
+  <img width="720" src="GIF&Image/cardiff1.gif">
 </p>
 
 ### Cardiff-Seq2
@@ -76,11 +77,12 @@ The following table summarizes the characteristics of each sequence in our datas
 
 - [RINEX Observation(Raw Measurements) File](RINEX/cardiff2.obs)
 - [RINEX Navigation(Ephemeris) File](RINEX/cardiff.nav)
+- [Ground Truth(SPAN-CPT7)](GroundTruth/cardiff2_ecef.tum) (ECEF)
 <p align="center">
-  <img width="480" src="GIF&Image/cardiff_2.png">
+  <img width="720" src="GIF&Image/cardiff_2.png">
 </p>
 <p align="center">
-  <img width="480" src="GIF&Image/cardiff2.gif">
+  <img width="720" src="GIF&Image/cardiff2.gif">
 </p>
 
 ### Cardiff-Seq3
@@ -89,11 +91,12 @@ The following table summarizes the characteristics of each sequence in our datas
 
 - [RINEX Observation(Raw Measurements) File](RINEX/cardiff3.obs)
 - [RINEX Navigation(Ephemeris) File](RINEX/cardiff.nav)
+- [Ground Truth(SPAN-CPT7)](GroundTruth/cardiff3_ecef.tum) (ECEF)
 <p align="center">
-  <img width="480" src="GIF&Image/cardiff_3.png">
+  <img width="720" src="GIF&Image/cardiff_3.png">
 </p>
 <p align="center">
-  <img width="480" src="GIF&Image/cardiff3.gif">
+  <img width="720" src="GIF&Image/cardiff3.gif">
 </p>
 
 ### Cardiff-Seq4
@@ -102,11 +105,12 @@ The following table summarizes the characteristics of each sequence in our datas
 
 - [RINEX Observation(Raw Measurements) File](RINEX/cardiff4.obs)
 - [RINEX Navigation(Ephemeris) File](RINEX/cardiff.nav)
+- [Ground Truth(SPAN-CPT7)](GroundTruth/cardiff4_ecef.tum) (ECEF)
 <p align="center">
-  <img width="480" src="GIF&Image/cardiff_4.png">
+  <img width="720" src="GIF&Image/cardiff_4.png">
 </p>
 <p align="center">
-  <img width="480" src="GIF&Image/cardiff4.gif">
+  <img width="720" src="GIF&Image/cardiff4.gif">
 </p>
 
 ### Cardiff-Seq5
@@ -115,11 +119,12 @@ The following table summarizes the characteristics of each sequence in our datas
 
 - [RINEX Observation(Raw Measurements) File](RINEX/cardiff5.obs)
 - [RINEX Navigation(Ephemeris) File](RINEX/cardiff.nav)
+- [Ground Truth(SPAN-CPT7)](GroundTruth/cardiff5_ecef.tum) (ECEF)
 <p align="center">
-  <img width="480" src="GIF&Image/cardiff_5.png">
+  <img width="720" src="GIF&Image/cardiff_5.png">
 </p>
 <p align="center">
-  <img width="480" src="GIF&Image/cardiff5.gif">
+  <img width="720" src="GIF&Image/cardiff5.gif">
 </p>
 
 ## How to Use (SLAM Configuration)
