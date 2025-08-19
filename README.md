@@ -47,8 +47,6 @@ CardiffNav is a new, large-scale, multi-modal sensor dataset with a strong empha
 ## DataSets
 
 The following table summarizes the characteristics of each sequence in our dataset:
-\textbf{Name}  & \textbf{Duration} & \textbf{Distance (km)} & \textbf{Max. Vel. (km/h)} & \textbf{GNSS Avail.} 
-
 | Name         | Size       | Duration | Distance (km) | Ave. Vel. (km/h) | Max. Vel. (km/h) | GNSS Avail. |
 | :----------- | :--------- | :------- | :------- | :--------------- | :--------------- | :--------------- |
 | Urban Common | 101.2 GB   | 627s     | 2.28  | 24.6        | 36.3        | 65.8%        |
