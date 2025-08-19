@@ -2,7 +2,7 @@
 
 ## Overview
 
-[TODO]
+CardiffNav is a new, large-scale, multi-modal sensor dataset with a strong emphasis on Global Navigation Satellite System (GNSS) for robust localisation research in challenging urban environments. It was created to address critical gaps in existing public datasets, particularly the lack of high-fidelity, low-level GNSS data and scenarios that capture the full spectrum of real-world signal degradation.
 
 ## Objective of the Dataset
 
@@ -47,16 +47,17 @@
 ## DataSets
 
 The following table summarizes the characteristics of each sequence in our dataset:
+\textbf{Name}  & \textbf{Duration} & \textbf{Distance (km)} & \textbf{Max. Vel. (km/h)} & \textbf{GNSS Avail.} 
 
-| Name         | Size       | Duration | Distance | Average Velocity | Maximum Velocity |
-| :----------- | :--------- | :------- | :------- | :--------------- | :--------------- |
-| Cardiff-Seq1 | 101.2 GB   | 627s     | 2.28 Km  | 24.6 Km/h        | 36.3 Km/h        |
-| Cardiff-Seq2 | 157.3 GB   | 982s     | 4.64 Km  | 28.0 Km/h        | 74.7 Km/h        |
-| Cardiff-Seq3 | 74.2 GB    | 466s     | 1.12 Km  | 20.6 Km/h        | 35.5 Km/h        |
-| Cardiff-Seq4 | 25.7 GB    | 159s     | 2.64 Km  | 62.3 Km/h        | 80.1 Km/h        |
-| Cardiff-Seq5 | 47.8 GB    | 296s     | 4.07 Km  | 53.1 Km/h        | 76.1 Km/h        |
+| Name         | Size       | Duration | Distance (km) | Ave. Vel. (km/h) | Max. Vel. (km/h) | GNSS Avail. |
+| :----------- | :--------- | :------- | :------- | :--------------- | :--------------- | :--------------- |
+| Urban Common | 101.2 GB   | 627s     | 2.28  | 24.6        | 36.3        | 65.8%        |
+| Urban Gradient | 157.3 GB   | 982s     | 4.64  | 28.0        | 74.7        | 62.4%        |
+| Urban Stop-to-Go | 74.2 GB    | 466s     | 1.12  | 20.6        | 35.5        | 48.9%        |
+| Tunnel---Bridge | 25.7 GB    | 159s     | 2.64  | 62.3        | 80.1        | 77.6%        |
+| Bridge---Tunnel | 47.8 GB    | 296s     | 4.07  | 53.1        | 76.1        | 86.9%        |
 
-### Cardiff-Seq1
+### Cardiff-Seq1 Urban Common
 
 [TODO]
 
@@ -71,7 +72,7 @@ The following table summarizes the characteristics of each sequence in our datas
   <img width="720" src="GIF&Image/cardiff1.gif">
 </p>
 
-### Cardiff-Seq2
+### Cardiff-Seq2 Urban Gradient
 
 [TODO]
 
@@ -85,7 +86,7 @@ The following table summarizes the characteristics of each sequence in our datas
   <img width="720" src="GIF&Image/cardiff2.gif">
 </p>
 
-### Cardiff-Seq3
+### Cardiff-Seq3 Urban Stop-to-Go
 
 [TODO]
 
@@ -99,7 +100,7 @@ The following table summarizes the characteristics of each sequence in our datas
   <img width="720" src="GIF&Image/cardiff3.gif">
 </p>
 
-### Cardiff-Seq4
+### Cardiff-Seq4 Tunnel---Bridge
 
 [TODO]
 
@@ -113,7 +114,7 @@ The following table summarizes the characteristics of each sequence in our datas
   <img width="720" src="GIF&Image/cardiff4.gif">
 </p>
 
-### Cardiff-Seq5
+### Cardiff-Seq5 Bridge---Tunnel
 
 [TODO]
 
@@ -131,7 +132,7 @@ The following table summarizes the characteristics of each sequence in our datas
 
 ### Visual Inertial Odometry
 
-#### [VINS-Mono](config/VINS/Mono) Configuration
+#### VINS-Mono [Configuration](config/VINS/Mono)
 
 1.  Copy `cardiff_mono_pinhole.yaml` and `cardiff_mono_imu_config.yaml` to the `config/euroc` folder within your [VINS-Fusion](https://github.com/HKUST-Aerial-Robotics/VINS-Fusion) project directory.
 2.  Launch the nodes in separate terminals:
@@ -150,7 +151,7 @@ The following table summarizes the characteristics of each sequence in our datas
     rosbag play Cardiffxxx.bag
     ```
 
-#### [VINS-Fusion](config/VINS/Stereo) Configuration
+#### VINS-Fusion [Configuration](config/VINS/Stereo)
 
 1.  Similarly, copy `cardiff_stereo0_pinhole.yaml`, `cardiff_stereo1_pinhole.yaml`, and `cardiff_stereo_imu_config.yaml` to the `config/euroc` folder within your [VINS-Fusion](https://github.com/HKUST-Aerial-Robotics/VINS-Fusion) project directory.
 2.  Launch the nodes in separate terminals:
@@ -171,7 +172,7 @@ The following table summarizes the characteristics of each sequence in our datas
 
 ### LiDAR Inertial Odometry
 
-#### [LIO-SAM](config/LIO) Configuration
+#### LIO-SAM [Configuration](config/LIO)
 
 1.  Copy `run_cardiff.launch` to the `launch` folder and `cardiff.yaml` to the `config` folder within your [LIO-SAM](https://github.com/TixiaoShan/LIO-SAM) project directory.
 2.  Run the launch file:
