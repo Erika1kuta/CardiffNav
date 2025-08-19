@@ -274,17 +274,11 @@ public:
         double roll = rpy[2];
         double pitch = rpy[1];
         double yaw = rpy[0];
-
-        std::cout << "IMU RPY(degrees)2: " << roll * 180 / M_PI << ", " 
-                  << pitch * 180 / M_PI << ", " << yaw * 180 / M_PI << std::endl;
         
         const double deg90_in_rad = 90.0 * M_PI / 180.0;
         double new_roll = -roll;
         double new_pitch = -pitch;
         double new_yaw = -(yaw + deg90_in_rad);
-        
-        std::cout << "IMU RPY(degrees)3: " << new_roll * 180 / M_PI << ", " 
-                  << new_pitch * 180 / M_PI << ", " << new_yaw * 180 / M_PI << std::endl;
 
         Eigen::Quaterniond q_final_new = Eigen::AngleAxisd(new_yaw, Eigen::Vector3d::UnitZ()) *
                                               Eigen::AngleAxisd(new_pitch, Eigen::Vector3d::UnitY()) *
