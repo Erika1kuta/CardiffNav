@@ -41,6 +41,7 @@ TODO
 | **Event Camera**        | Inivation Davis 346: 346x260, Asynchronous                                                 |
 | **IMU**                 | Microstrain 3DM-GX5-AHRS: 9-axis (accelerometer/gyroscope/magnetometer) @ 500Hz |
 | **GNSS Receiver**       | u-blox EVK-F9P: L1/L2 GPS/GLONASS/Galileo/BeiDou @ 1Hz                         |
+| **GNSS Recorder**       | GSS6450 RF Record & Playback System                       |
 | **Ground Truth**        | NovAtel SPAN-CPT7: Tightly-coupled RTK/INS, RMSE: <5cm @ 1Hz                               |
 
 ### Extrinsic and Intrinsic Parameters
@@ -182,7 +183,8 @@ We provide configuration files for popular open-source SLAM algorithms to help y
 ### LiDAR Inertial Odometry (LIO-SAM)
 
 1.  **Configuration:** [`config/LIO`](config/LIO)
-    - Copy `run_cardiff.launch` to the `launch` folder and `cardiff.yaml` to the `config` folder in your [LIO-SAM](https://github.com/TixiaoShan/LIO-SAM) project, then use `utility.h` to replace the `include/utility.h` file in the [LIO-SAM](https://github.com/TixiaoShan/LIO-SAM) project and recompile.
+    - Copy `run_cardiff.launch` to the `launch` folder and `cardiff.yaml` to the `config` folder within your [LIO-SAM](https://github.com/TixiaoShan/LIO-SAM) project.
+    - **Important:** You must also replace the original `include/utility.h` file in the LIO-SAM source code with our provided [`utility.h`](config/LIO/utility.h) and then recompile the project. This modification is necessary because the standard LIO-SAM implementation uses the magnetometer for initial heading estimation. Our Microstrain IMU provides magnetometer data with a frame definition that differs from more common IMUs, and our modified `utility.h` file contains the correct transformations to resolve this orientation issue.
 2.  **Run:** `roslaunch lio_sam run_cardiff.launch`
 3.  **Play Bag:** `rosbag play Cardiff-SeqX.bag`
 
