@@ -186,6 +186,19 @@ We provide configuration files for popular open-source SLAM algorithms to help y
 2.  **Run:** `roslaunch lio_sam run_cardiff.launch`
 3.  **Play Bag:** `rosbag play Cardiff-SeqX.bag`
 
+### Raw GNSS RF Signals (IF Data)
+
+A key feature of CardiffNav is the inclusion of raw Intermediate Frequency (IF) signal samples, captured by a **Spirent GSS6450** recorder. This data enables full-stack research, from low-level signal processing and algorithm development to testing receiver performance under real-world conditions.
+
+To ensure accessibility and ease of use, the proprietary binary data has been converted to the self-describing **HDF5 format**. Each `.hdf5` file contains the raw IQ samples for two key frequency bands, along with all necessary metadata such as sampling rates and timestamps.
+
+| Channel | Center Frequency  | Bandwidth / Sample Rate |
+| :------ | :---------------- | :---------------------- |
+| **L1**  | 1575.420 MHz      | 10.0 MHz                |
+| **L2**  | 1227.600 MHz      | 30.0 MHz                |
+
+For a complete guide on the HDF5 file structure, metadata details, and Python examples for accessing the data, please see our detailed **[Raw RF Data Usage Guide](RF_DATA_GUIDE.md)**.
+
 ## Contact
 
 For questions about the dataset, please contact [lius112@cardiff.ac.uk] or open an issue in this repository.
