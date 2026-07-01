@@ -88,7 +88,7 @@ This sequence emulates the most common challenges for GNSS in urban driving: sig
 - Download Link
 - [RINEX Observation(Raw Measurements) File](RINEX/cardiff1.obs)
 - [RINEX Navigation(Ephemeris) File](RINEX/cardiff.nav)
-- [Ground Truth(TUM format, ENU)](GroundTruth/cardiff1_ecef.tum) (ECEF)
+- [Ground Truth(TUM format, ENU)](GroundTruth/cardiff1_enu.tum) (ECEF)
 - [Ground Truth(TUM format, ECEF)](GroundTruth/cardiff1_ecef.tum) (ECEF)
 
 <p align="center">
