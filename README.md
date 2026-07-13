@@ -28,7 +28,7 @@ CardiffNav is designed to directly address these deficiencies by providing the h
 
 If you use the CardiffNav dataset in your research, please cite our paper:
 
-TODO
+The paper citation and DOI will be added after formal publication.
 
 ## Dataset
 
