@@ -39,11 +39,9 @@ This repository provides RINEX files, ground-truth trajectories, sensor calibrat
 
 **[Download CardiffNav from Google Drive](https://drive.google.com/drive/folders/1OgGFd60zfv1RqU3zQvtJYb9qs8K6ztRR?usp=drive_link)**
 
-> **Upload in progress:** Dataset files are being uploaded. Some sequences or files may not yet be available; please check the folder again as the upload progresses.
-
 | Resource | Access |
 | :------- | :----- |
-| Dataset recordings | [Google Drive folder](https://drive.google.com/drive/folders/1OgGFd60zfv1RqU3zQvtJYb9qs8K6ztRR?usp=drive_link) — upload in progress |
+| Dataset recordings | [Google Drive folder](https://drive.google.com/drive/folders/1OgGFd60zfv1RqU3zQvtJYb9qs8K6ztRR?usp=drive_link) |
 | University dataset record and access requests | [Cardiff University · DOI: 10.17035/cardiff.33329613](https://doi.org/10.17035/cardiff.33329613) |
 | RINEX observations and navigation files | [RINEX](RINEX) |
 | Ground-truth trajectories | [GroundTruth](GroundTruth) |
